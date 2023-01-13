@@ -6,12 +6,14 @@ import "react-toastify/dist/ReactToastify.css";
 
 function TodoTitles() {
 
+  const BASE_URL = "https://todo-app-mern-hazel.vercel.app"
+
   const [todoData, setTodoData] = useState(null);
 
 
   // function to get the Data from Backend
   const fetchTodoData = async () => {
-    const resp = await axios.get("/getTodo");
+    const resp = await axios.get(`${BASE_URL}/getTodo`);
     if (resp.data.getTodo.length > 0) {
       setTodoData(resp.data.getTodo);
     }
@@ -26,7 +28,7 @@ function TodoTitles() {
   const handleEdit = async (editTodo) => {
     const newTitle = prompt("Enter a New Title");
     if (newTitle) {
-      const resp = await axios.put(`/editTodo/${editTodo._id}`, {
+      const resp = await axios.put(`${BASE_URL}/editTodo/${editTodo._id}`, {
         title: newTitle,
       });
       const notify = () => {
@@ -38,7 +40,7 @@ function TodoTitles() {
 
   // Delete Todo Function
   const handleDelete = async (todoId) => {
-    const resp = await axios.delete(`/deleteTodo/${todoId}`);
+    const resp = await axios.delete(`${BASE_URL}/deleteTodo/${todoId}`);
     const notify = () => {
       toast.error("Delete Successfully");
     };

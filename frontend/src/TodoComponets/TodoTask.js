@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TfiClose } from "react-icons/tfi";
 import axios from "axios";
 
-function Task({ addText, setAddText }) {
+function TodoTask({ addText, setAddText }) {
    // To store the value from frontend
   const [todoTask, setTodoTask] = useState("");
 
@@ -63,4 +63,4 @@ function Task({ addText, setAddText }) {
     </>
   );
 }
-export default Task;
+export default TodoTask;

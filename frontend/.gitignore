@@ -24,4 +24,5 @@ yarn-error.log*
 
 
 
-/TodoEdit
+./src/TodoComponets/TodoEdit.js
+./src/TodoComponets/TodoTask.js

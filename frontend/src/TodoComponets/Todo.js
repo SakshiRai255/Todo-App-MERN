@@ -6,15 +6,19 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Todo() {
+  
+  const BASE_URL = "https://todo-app-mern-hazel.vercel.app"
+
   // To store the value from frontend
   const [todoTitle, setTodoTitle] = useState("");
+
 
   // function to send the Data
   const submitData = async () => {
     const data = {
       title: todoTitle,
     };
-    const result = await axios.post("/createTodo", data);
+    const result = await axios.post(`${BASE_URL}/createTodo`, data);
   };
     
   const notify = () => {
