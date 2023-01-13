@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 
-// connect to database
+// connect to databse
 connToDataBase();
 
 app.use("/",todoRoutes);
