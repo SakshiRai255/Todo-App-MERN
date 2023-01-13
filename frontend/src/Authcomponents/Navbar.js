@@ -14,7 +14,7 @@ function Navbar({ user }) {
           {user ? (
             <button
               type="button"
-              className="btn btn-danger"
+              className="btn" style={{color:"#fff", border:"2px solid #fff"}}
               onClick={() => {
                 auth.signOut();
                 navigate("/login");
@@ -24,10 +24,10 @@ function Navbar({ user }) {
             </button>
           ) : (
             <>
-              <Link className="nav-link text-light" to="/login">
+              <Link className="nav-link text-light rounded mx-1" to="/login" style={{color:"#fff", border:"2px solid #fff"}}>
                 Log In
               </Link>
-              <Link className="nav-link text-light" to="/signup">
+              <Link className="nav-link text-light rounded mx-1" to="/signup" style={{color:"#fff", border:"2px solid #fff"}}>
                 Sign Up
               </Link>
             </>
