@@ -12,8 +12,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 
-
+// connect to database
 connToDataBase();
+
 app.use("/",todoRoutes);
 
 module.exports = app
