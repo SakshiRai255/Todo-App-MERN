@@ -7,6 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Todo() {
   
+  // link of backend
+  
   const BASE_URL = "https://todo-app-mern-hazel.vercel.app"
 
   // To store the value from frontend
@@ -19,6 +21,7 @@ function Todo() {
       title: todoTitle,
     };
     const result = await axios.post(`${BASE_URL}/createTodo`, data);
+       notify();
   };
     
   const notify = () => {
@@ -31,7 +34,6 @@ function Todo() {
     // to submit the data
     submitData();
 
-     notify();
 
     // to empty the data
     setTodoTitle("");

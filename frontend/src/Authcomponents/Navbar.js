@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
+import './Auth.css'
 
 function Navbar({ user }) {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Navbar({ user }) {
           {user ? (
             <button
               type="button"
-              className="btn" style={{color:"#fff", border:"2px solid #fff"}}
+              className="btn button"
               onClick={() => {
                 auth.signOut();
                 navigate("/login");
@@ -24,10 +25,10 @@ function Navbar({ user }) {
             </button>
           ) : (
             <>
-              <Link className="nav-link text-light rounded mx-1" to="/login" style={{color:"#fff", border:"2px solid #fff"}}>
+              <Link className="nav-link text-light rounded mx-1" to="/login" style={{border:"2px solid #fff"}}>
                 Log In
               </Link>
-              <Link className="nav-link text-light rounded mx-1" to="/signup" style={{color:"#fff", border:"2px solid #fff"}}>
+              <Link className="nav-link text-light rounded mx-1" to="/signup" style={{border:"2px solid #fff"}}>
                 Sign Up
               </Link>
             </>

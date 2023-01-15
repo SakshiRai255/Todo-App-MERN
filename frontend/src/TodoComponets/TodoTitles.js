@@ -6,6 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 function TodoTitles() {
 
+  // link of backend
+
   const BASE_URL = "https://todo-app-mern-hazel.vercel.app"
 
   const [todoData, setTodoData] = useState(null);
