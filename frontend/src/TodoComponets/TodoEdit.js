@@ -32,8 +32,8 @@ function TodoEdit({ todoData ,todoId }) {
     setOpened(false);
   };
 
-  const handleCancel = (cancel)=>{
-    cancel.stopPropagation();
+  const handleCancel = ()=>{
+    setOpened(false);
   }
 
   return (
