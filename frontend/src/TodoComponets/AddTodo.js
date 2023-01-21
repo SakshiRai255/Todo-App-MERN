@@ -1,26 +1,23 @@
 import React, { useState } from "react";
-import TodoTitles from "./TodoTitles";
+import TodoList from "./TodoList";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Todo() {
-  
   // link of backend
-  
-  const BASE_URL = "https://todo-app-mern-hazel.vercel.app"
+  const BASE_URL = "https://todo-app-mern-hazel.vercel.app";
 
   // To store the value from frontend
   const [todoTitle, setTodoTitle] = useState("");
-
 
   // function to send the Data
   const submitData = async () => {
     const data = {
       title: todoTitle,
     };
-    const result = await axios.post(`${BASE_URL}/createTodo`, data);
+    const result = await axios.post(`${BASE_URL}/todo/createTodo`, data);
        notify();
   };
     
@@ -33,8 +30,6 @@ function Todo() {
     event.preventDefault();
     // to submit the data
     submitData();
-
-
     // to empty the data
     setTodoTitle("");
   };
@@ -65,7 +60,7 @@ function Todo() {
         </form>
       </div>
       <div className="container my-10 mt-5">
-        <TodoTitles></TodoTitles>
+        <TodoList></TodoList>
       </div>
       <ToastContainer />
     </>

@@ -36,10 +36,10 @@ exports.createTodo = async (req, res) => {
 
 exports.getTodo = async (req, res) => {
   try {
-    const getTodo = await Todo.find();
+    const todo = await Todo.find();
     res.status(200).json({
       success: true,
-      getTodo,
+      todo,
     });
   } catch (error) {
     res.status(401).json({
@@ -49,15 +49,46 @@ exports.getTodo = async (req, res) => {
   }
 };
 
+
+exports.getTodoById = async (req,res) =>{
+  const todoId = req.params.id
+  try {
+    const todo = await Todo.findById(todoId);
+    if (!todo) {
+      return res.status(404).json("Todo not find by this Id")
+    }
+    return res.status(200).json({
+      message:"Successfully",
+      todo,
+    })
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    }); 
+  }
+}
+
 // Edit Todo or Update Todo
 
 exports.editTodo = async (req, res) => {
+
+  const id = req.params.id;
+  const { title } = req.body;
   try {
-    const editTodo = await Todo.findByIdAndUpdate(req.params.id, req.body);
-    res.status(200).json({
+    const todo = await Todo.findByIdAndUpdate(id,{title});
+    if (!todo) {
+      return res.status(404).json({
+        message: "Unable to updated by this Id",
+      });
+    }
+    await todo.save();
+    return res.status(200).json({
       success: true,
       message: "Title Updated Successfully",
+      todo
     });
+
   } catch (error) {
     res.status(401).json({
       success: false,

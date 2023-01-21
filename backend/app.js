@@ -15,6 +15,6 @@ app.use(express.urlencoded({extended:true}));
 // connect to databse
 connToDataBase();
 
-app.use("/",todoRoutes);
+app.use("/todo",todoRoutes);
 
 module.exports = app
