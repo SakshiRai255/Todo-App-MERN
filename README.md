@@ -1,4 +1,13 @@
 # Todo-App-MERN
-This is  Todo App MERN  Project backend and frontend
+This is Todo App MERN Project full crud operation
+You can create Todo and You can delete todo you can edit Todo 
 
-<!-- https://todo-app-mern-1anz.vercel.app/login -->
+## Stack Used
+- HTML
+- BOOTSTRAP 
+- JAVASCRIPT 
+- React Js
+- Express Js
+- MongoDB
+
+[Deploye Link](https://todo-app-mern-1anz.vercel.app/login)

@@ -2,6 +2,7 @@
 color: #FFF;
 background-color: transparent;
 border: 2px solid #FFF;
+cursor: pointer;
 }
 .button{
     background-color: #FFF;

@@ -13,24 +13,18 @@ function Navbar({ user }) {
         <span className="navbar-brand text-light">Todo</span>
         <div className="nav d-flex px-2">
           {user ? (
-            <button
-              type="button"
-              className="btn button"
-              onClick={() => {
-                auth.signOut();
-                navigate("/login");
-              }}
-            >
-              Log Out
-            </button>
+            <>
+             <form class="d-flex mx-auto" role="search">
+                <input class="form-control me-2 button" type="search" placeholder="Search"/>
+             </form>
+
+            <button type="button"className="btn button"
+              onClick={() => {auth.signOut(); navigate("/login")}}>Log Out</button>
+             </>
           ) : (
             <>
-              <Link className="nav-link text-light rounded mx-1" to="/login" style={{border:"2px solid #fff"}}>
-                Log In
-              </Link>
-              <Link className="nav-link text-light rounded mx-1" to="/signup" style={{border:"2px solid #fff"}}>
-                Sign Up
-              </Link>
+              <Link to="/login"><button type="button"className="btn button mx-3">Log In</button></Link>
+              <Link to="/signup"><button type="button"className="btn button">Sign Up</button></Link>
             </>
           )}
         </div>
